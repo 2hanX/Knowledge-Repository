@@ -2,7 +2,7 @@
 
 ### PNG头文件结构 [^1]
 
-![png_fmt](./resources/png_format/png_fmt.png)
+![png_fmt](./src/png_format/png_fmt.png)
 
 ### PNG数据块（Chunk）
 
@@ -55,7 +55,7 @@
 | Filter method      | 1 byte  | 滤波器方法                                                   |
 | Interlace method   | 1 byte  | 隔行扫描方法： <br />0：非隔行扫描 <br/>1： Adam7(由Adam M. Costello开发的7遍隔行扫描方法) |
 
-![IHDR](./resources/png_format/ihdr.png)
+![IHDR](./src/png_format/ihdr.png)
 
 ### PLTE [^7]
 
