@@ -79,7 +79,7 @@
 
 - [PNG规范](http://www.libpng.org/pub/png/spec/1.2/PNG-Contents.html)
 
-[原文](https://www.xuebuyuan.com/3189742.html)
+[参考](https://www.xuebuyuan.com/3189742.html)
 
 ---
 
