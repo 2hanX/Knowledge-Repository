@@ -41,3 +41,12 @@
 ### 根据进程 ID 查看该进程的 tcp 网络连接
 
 - `netstat -anop tcp | findstr 10120`
+
+### 命令行打开计算机管理面板
+
+- `compmgmt.msc`
+
+### 命令行打开远程桌面程序
+
+- `mstsc`
+
