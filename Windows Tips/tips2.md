@@ -19,5 +19,10 @@
 set /p = "hello world" <nul > a.txt
 certutil -encode a.txt b.txt
 type b.txt
+notepad b.txt
 ```
+
+### 获取本地外网IP地址
+
+`curl cip.cc`
 
