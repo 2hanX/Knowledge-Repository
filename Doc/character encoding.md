@@ -6,21 +6,21 @@
 
    - ASCII非打印控制字符（参详ASCII码表中==0-31==）
    - ASCII打印字符，也就是CTF中常用到的转换 （参详ASCII码表中==32-127==）
-   - ![ascii](./src/ascii.png)
+   - ![ascii](../src/ascii.png)
    - 扩展ASCII打印字符（参详ASCII码表中==128-255==）[^7]
-   - ![ansi](./src/ansi.png)
+   - ![ansi](../src/ansi.png)
 2. #### URL编码 [^2]
 
    - 示例
      - easy ---> `%65%61%73%79`
 3. #### HTML实体编码 [^3]
 
-   - ![html_entity_name](./src/html_entity_name.png)
+   - ![html_entity_name](../src/html_entity_name.png)
    - 示例
      - easy  --- >  ` &#101;&#97;&#115;&#121`
 4. #### Base编码 [^4]
 
-   - ![base64](./src/base64_encode.png)
+   - ![base64](../src/base64_encode.png)
    - 示例
      - easy ---> `ZWFzeQ==`
 5. #### Unicode编码 [^5]
@@ -99,7 +99,7 @@
 
       - 维吉尼亚密码（又译维热纳尔密码）是使用一系列凯撒密码组成密码字母表的加密算法，属于多表密码的一种简单形式。以其简单易用而著称，同时初学者通常难以破解，因而又被称为“不可破译的密码”。这也让很多人使用维吉尼亚密码来加密的目的就是为了将其破解
 
-      - ![Vigenère](./src/Vigenère.png)
+      - ![Vigenère](../src/Vigenère.png)
 
       - 示例
 
