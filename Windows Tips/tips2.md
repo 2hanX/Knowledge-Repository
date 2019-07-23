@@ -1,6 +1,6 @@
 ### Windows设置电脑允许或拒绝远程桌面连接
 
-- `sysdm.cpl(系统属性)` -> 远程 -> 远程桌面
+- `sysdm.cpl(系统属性)` → 远程 → 远程桌面
 - `rdesktop -u test$ -p 123456 192.168.1.1 -r sound:on -g 1024*768`
 
 ### cmd 下查看系统环境变量
@@ -26,3 +26,27 @@ notepad b.txt
 
 `curl cip.cc`
 
+### 查看系统属于的域
+
+`sysdm.cpl`→ 计算机名 → 更改 → 隶属于
+
+### 查询域
+
+```powershell
+ipconfig /all
+net view
+net view /domain #查询有几个域
+net group /domain #查询域里面的组
+net user /domain #查询域用户
+net group "domain admins" /domain #查询域管理用户组
+```
+
+### 端口转发工具 [^1]
+
+`netsh`
+
+
+
+---
+
+[^1]: vIDC、lcx、netsh (Windows自带)
