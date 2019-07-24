@@ -45,6 +45,25 @@ net group "domain admins" /domain #查询域管理用户组
 
 `netsh`
 
+ [netsh.md](..\Doc\netsh.md) 
+
+### Windows软件管理器
+
+- Scoop
+
+```powershell
+# powershell
+set-executionpolicy remotesigned -scope currentuser 
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh') # 安装scoop
+scoop help
+scoop search nmap
+scoop install grep
+scoop install netcat
+scoop list
+```
+
+
+
 
 
 ---
