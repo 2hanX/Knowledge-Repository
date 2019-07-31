@@ -7,9 +7,18 @@
 | JPG;JPEG | `FF D8 FF FE 00 4A 46 49 46` | JFIF   | `FF D9` |
 |          | `47 49 46 38 39 61`          | GIF89a | `3B`    |
 
+### 使用 `certutil `工具校验文件
 
+```
+certutil -hashfile file MD5
+certutil -hashfile file SHA1
+certutil -hashfile file SHA256
+```
 
+### 查看磁盘信息
 
+- `diskmgmt.msc`
+- `diskpart`→`list disk`
 
 ---
 
