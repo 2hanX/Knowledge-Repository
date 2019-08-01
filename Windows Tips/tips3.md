@@ -20,6 +20,19 @@ certutil -hashfile file SHA256
 - `diskmgmt.msc`
 - `diskpart`→`list disk`
 
+### 测量命令的执行时间
+
+- `cmd /v:on /c "echo !TIME! & echo hello  & echo !TIME!"`
+- `powershell -Command "Measure-Command {echo hi}"`
+
+### cmd窗口中英文切换
+
+- 中文：`chcp 936`
+- 英文：`chcp 437`
+
+
+
 ---
 
-[^1]: 格式不完全相同，但开始几个字节是固定值；例如 GIF89a 与 GIF87a
+[^1]: 格式不完全相同，但开始几个字节是固定值；例如 `GIF89a` 与 `GIF87a`
+
