@@ -29,3 +29,18 @@ sudo apt-get clean //清理所有软件
 sudo apt-get autoremove //删除系统不再使用的孤立软件
 ```
 
+### 插入数据到文件指定行数[^1]
+
+`sed -i 'ni\xx' target.file`
+
+`sed -i 'na\xx' target.file`
+
+`sed -i '2i\hello' demo.txt`
+
+`sed -i '4a\hello world' demo.txt`
+
+
+
+---
+
+[^1]: ==i==（in front，前面）；==a==（after，后面）
