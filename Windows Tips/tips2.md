@@ -30,7 +30,7 @@ notepad b.txt
 
 `sysdm.cpl`→ 计算机名 → 更改 → 隶属于
 
-### 查询域
+### 查询域（域渗透）
 
 ```powershell
 ipconfig /all
@@ -38,7 +38,10 @@ net view
 net view /domain #查询有几个域
 net group /domain #查询域里面的组
 net user /domain #查询域用户
+net user administrator /domain #查看域用户administrator属于哪个组
 net group "domain admins" /domain #查询域管理用户组
+net localgroup administrators /domain #查询登录过本机的域管理员
+net config workstation #当前登录域
 ```
 
 ### 端口转发工具 [^1]
