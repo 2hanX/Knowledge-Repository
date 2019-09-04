@@ -26,3 +26,7 @@
 
 `query user`
 
+### 比较两个文件
+
+`fc file1.txt file2.txt > file3.txt`
+
