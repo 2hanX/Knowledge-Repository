@@ -259,7 +259,7 @@ typedef struct _IMAGE_SECTION_HEADER {
   - ```
       STRUCT  IAMGE_IMPORT_BY_NAME
       {
-          DWORD Hint;    //本函数在其所驻留DLL的输出表中的序号 
+          WORD Hint;    //本函数在其所驻留DLL的输出表中的序号 
           BYTE  Name;     //输入函数的函数名,函数名是一个ASCII码字符串,以NULL结尾
       };
       ```
@@ -279,6 +279,34 @@ PE装载器首先搜索`OriginalFirstThunk`，如果找到了，加载程序迭�
 有些情况下函数仅由序号引出，也就是说不能用函数名来调用它，只能通过位置调用它，此时 `IMAGE_THUNK_DATA `值的低位字指示函数序数，最高有效位（`MSB`）设为`1`，微软提供了一个方便的常量测量`DWORD`值的`MSB`位，就是 `IMAGE_ORDINAL_FLAG32`，其值是`80000000h`
 
 另一种情况是程序的 `OriginalFirstThunk `的值为`0`，初始化时，系统根据`FirstThunk `的值指向函数名的地址串，由地址串找到函数名，再根据函数名入口地址，然后用入口地址取代 `FirstThunk `指向的地址串的原值
+
+### 0x9 输出表
+
+创建一个DLL时，实际上创建了一组能让EXE或其他DLL调用的函数，此时PE装载器根据DLL文件中输出的信息修正被执行文件的IAT。当一个DLL函数能被EXE或另一个DLL文件使用时，它就被“输出（Exported）”了。其中，输出信息被保存在输出表中，DLL文件通过输出表向系统提供输出函数名、序号和入口地址等信息
+
+EXE文件一般不存在输出表，而大部分DLL文件中存在输出表
+
+```
+typedef struct IMAGE_EXPORT_DIRECTORY {
+    DWORD   Characteristics;
+    DWORD   TimeDateStamp;
+    WORD    MajorVersion;
+    WORD    MinorVersion;
+    DWORD   Name;				   //模块的真实名称
+    DWORD   Base;				   //基数，序数减这个基数就是函数地址数组的索引值
+    DWORD   NumberOfFunctions;
+    DWORD   NumberOfNames;
+    DWORD   AddressOfFunctions;     // 指向函数地址数组
+    DWORD   AddressOfNames;         // 函数名字的指针地址
+    DWORD   AddressOfNameOrdinals;  // 指向输出序列号数组
+} IMAGE_EXPORT_DIRECTORY, *PIMAGE_EXPORT_DIRECTORY;
+```
+
+![4](../src/pe/4.png)
+
+
+
+
 
 ### 原文
 
