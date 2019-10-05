@@ -39,8 +39,15 @@ sudo apt-get autoremove //删除系统不再使用的孤立软件
 
 `sed -i '4a\hello world' demo.txt`
 
+### 使用Base64 加密加密
+
+`echo hello | tr -d '\n' | base64` [^2]
+
+`echo aGVsbG8= | base64 -d `
+
 
 
 ---
 
 [^1]: ==i==（in front，前面）；==a==（after，后面）
+[^2]: 在进行 Base64 加密前去掉换行符
