@@ -39,15 +39,28 @@ sudo apt-get autoremove //删除系统不再使用的孤立软件
 
 `sed -i '4a\hello world' demo.txt`
 
-### 使用Base64 加密加密
+### 使用Base64 加解密
 
 `echo hello | tr -d '\n' | base64` [^2]
 
+`echo -n hello | openssl base64`
+
 `echo aGVsbG8= | base64 -d `
+
+`openssl base64 -d -in file.txt` [^3]
+
+### 其他加密 [^4]
+
+`echo -n abcd | openssl sha1 `
+
+`echo -n abcd | openssl aes-128-cbc -k 123 -base64`
 
 
 
 ---
 
 [^1]: ==i==（in front，前面）；==a==（after，后面）
-[^2]: 在进行 Base64 加密前去掉换行符
+[^2]: 在进行 Base64 加密前去掉换行符，或者`echo -n hello | base64`
+[^3]: 对`file.txt`文件进行 base64 解密；或者 `cat file.txt | base64 -d`
+[^4]: 更多OpenSSL支持的加密算法`man openssl`
+
