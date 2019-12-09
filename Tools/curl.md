@@ -15,7 +15,7 @@
 | 6：设置请求头`User-Agent`                                | `curl -X GET -A elephant https://httpbin.org/anything`       | `-A`参数设置用户代理                                         |
 | 7：发起 `DELETE` 请求                                    | `curl -X DELETE https://httpbin.org/anything`                |                                                              |
 | 8：获取响应头信息                                        | `curl -I https://httpbin.org/anything`                       |                                                              |
-| 9：发起请求体为 JSON `{"value": "panda"}` 的 `POST` 请求 | `curl -d '{ "value" : "panda" }' https://httpbin.org/anything` | 注意在传`JSON`格式的数据时，引号与`{}`之间有空格；此外使用`-d`参数以后，HTTP 请求默认会自动加上标头`Content-Type : application/x-www-form-urlencoded`，并且会自动将请求转为 `POST` 方法，因此可以省略`-X POST` |
+| 9：发起请求体为 JSON `{"value": "panda"}` 的 `POST` 请求 | `curl -d '{ "value" : "panda" }' https://httpbin.org/anything` | 注意：Windows 平台下==里反义，里外都双==（括号内的引号需要`\`转义），Linux 平台下==里双外单==（内部字符串使用双引号，括号外使用单引号）；此外使用`-d`参数以后，HTTP 请求默认会自动加上标头`Content-Type : application/x-www-form-urlencoded`，并且会自动将请求转为 `POST` 方法，因此可以省略`-X POST` |
 | 10                                                       | `curl -X POST -H "Content-Type:application/json" -d '{ "value" : "panda" }' https://httpbin.org/anything` |                                                              |
 | 11                                                       | `curl -H "Accept-Encoding: gzip" https://httpbin.org/anything` | 出现警告信息，提示添加`--output`参数保存压缩文件             |
 | 12：使用文件传输形式传`JSON`                             | `curl -d @test.json -X POST https://httpbin.org/anything`    |                                                              |
